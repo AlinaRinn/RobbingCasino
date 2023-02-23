@@ -26,15 +26,13 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_pushButton_clicked()
 {
-    for(int i = 0; i < 14; i++){
-        progress++;
-        received += QRandomGenerator::global()->bounded(1000000);
-        ui->progressBar->setValue(progress);
-        ui->progressBar->update();
-        ui->progressLabel->setText(QString::number(progress) + "%");
-        ui->receivedLabel->setText(QString::number(received));
-        _sleep(200);
-    }
+    progress++;
+    received += QRandomGenerator::global()->bounded(1000000);
+    ui->progressBar->setValue(progress);
+    ui->progressBar->update();
+    ui->progressLabel->setText(QString::number(progress) + "%");
+    ui->receivedLabel->setText(QString::number(received));
+    _sleep(700);
     if(progress % 14 == 0){
         QMessageBox::information(this, "Внимание!", "Вы уверены?");
         QMessageBox::about(this, "Внимание!", "Вы уверены?");
