@@ -14,6 +14,7 @@ MainWindow::MainWindow(QWidget *parent): QMainWindow(parent), ui(new Ui::MainWin
     //setWindowIcon(QIcon(":/icon-casino-game.png"));
     //setWindowTitle("Взлом Казино");
     //setWindowFlags(Qt::SplashScreen | Qt::WindowStaysOnTopHint);
+    setWindowFlags(Qt::WindowStaysOnTopHint);
     setWindowFlags(windowFlags() & ~Qt::WindowMinimizeButtonHint);
     setWindowFlags(windowFlags() & ~Qt::WindowCloseButtonHint);
     ui->totalLabel->setText(QString::number(QRandomGenerator::global()->bounded(100000000)));
